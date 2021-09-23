@@ -19,13 +19,13 @@ namespace Entidades
         /// <summary>
         /// Constructor por defecto, inicializa el atributo numero en cero.
         /// </summary>
-        public Operando()
+        public Operando() : this(0)
         {
-            this.numero = 0;
+
         }
 
         /// <summary>
-        /// Constructor con paremetro, utiliza el Set para asignar el valor al atributo numero.
+        /// Constructor con paremetro.
         /// </summary>
         /// <param name="numero">Numero double para asignar al campo del objeto.</param>
         public Operando(double numero)

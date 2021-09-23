@@ -123,8 +123,8 @@ namespace MiCalculadora
         {
             Operando n1 = new Operando(num1);
             Operando n2 = new Operando(num2);
-
-            return Calculadora.Operar(n1, n2, operador.ElementAt(0));
+            char operadorStr = operador.Length > 0 ? operador.ElementAt(0) : '+';
+            return Calculadora.Operar(n1, n2, operadorStr);
         }
 
         private void FormCalculadora_Load(object sender, EventArgs e)
