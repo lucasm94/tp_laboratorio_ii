@@ -10,7 +10,7 @@ namespace Test
             HinchaPlusServicio hinchaPlus = new HinchaPlusServicio();
             Console.WriteLine("Hincha Plus!!!\n");
             Console.WriteLine("Hinchas antes de leer un archivo con hinchas\n");
-            Console.WriteLine($"Hinchas cargados: {hinchaPlus.Hinchas.Count}\n");
+            Console.WriteLine($"Hinchas cargados: {hinchaPlus.HinchasActivos()}\n");
             Console.WriteLine("Estadisticas totales: \n");
             foreach (ClubEstadistica item in hinchaPlus.HinchasTotales())
             {
@@ -27,21 +27,21 @@ namespace Test
             hinchaPlus.CargarHincha(hinchaRacing);
             hinchaPlus.CargarHincha(hinchaRiver);
             Console.WriteLine("finalizo la carga de hinchas\n");
-            Console.WriteLine($"Hinchas cargados: {hinchaPlus.Hinchas.Count}\n");
+            Console.WriteLine($"Hinchas cargados: {hinchaPlus.HinchasActivos()}\n");
             Console.WriteLine("Estadisticas totales: \n");
             foreach (ClubEstadistica item in hinchaPlus.HinchasTotales())
             {
                 Console.WriteLine($"{item}");
             }
             Console.WriteLine("Actualizo hincha de Racing dejando de ser socio\n");
-            hinchaPlus.ActualizarHincha(hinchaRacing.Dni, hinchaRacing.Club, false);
+            hinchaPlus.ActualizarHincha(hinchaRacing, hinchaRacing.Club, false);
             Console.WriteLine("Estadisticas totales: \n");
             foreach (ClubEstadistica item in hinchaPlus.HinchasTotales())
             {
                 Console.WriteLine($"{item}");
             }
             Console.WriteLine("Doy de baja a hincha de River: \n");
-            hinchaPlus.BajaHincha(hinchaRiver.Dni);
+            hinchaPlus.BajaHincha(hinchaRiver);
             foreach (ClubEstadistica item in hinchaPlus.HinchasTotales())
             {
                 Console.WriteLine($"{item}");
